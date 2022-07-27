@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<div><%= @client.last_name %>, <%= @client.first_name %> - <%= @client.address %></div>
+<table>
+  <% @client.get_projects.each do  |p|%>
+      <tr>
+        <td><%= p['id'] %></td>
+        <td><%= p['customer'] %></td>
+        <td><%= p['streetAddress'] %></td>
+        <td><%= p['streetName'] %></td>
+        <td><%= p['city'] %></td>
+        <td><%= p['state'] %></td>
+        <td><%= p['zipcode'] %></td>
+        <td><%= p['status'] %></td>
+      </tr>
+  <% end%>
+</table>
+
+<%= link_to 'Edit', edit_client_path(@client) %> |
+<%= link_to 'Back', clients_path %>
